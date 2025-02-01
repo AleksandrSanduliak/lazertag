@@ -1,0 +1,37 @@
+.headerLogo {
+  width: 71px;
+  height: 77px;
+  min-width: 71px;
+  min-height: 77px;
+}
+
+.footerLogo {
+  margin-right: 180px;
+
+  @media(max-width: 1700.98px) {
+    margin-right: 100px;
+  }
+
+  @media(max-width: 1440.98px) {
+    margin-right: 30px;
+  }
+
+  @media(max-width: 1300.98px) {
+    width: 250px;
+    height: 250px;
+  }
+
+  @media(max-width: 768.98px) {
+    width: 200px;
+    height: 200px;
+  }
+
+  @media(max-width: 425.98px) {
+    width: 125px;
+    height: 125px;
+  }
+
+  @media(max-width: 500.98px) {
+    margin-bottom: 40px;
+  }
+}

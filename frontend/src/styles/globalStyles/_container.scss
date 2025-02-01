@@ -1,0 +1,16 @@
+:root {
+  --content-width: 1850px;
+  --container-offset: 30px;
+  --container-common-offset: (var(--container-offset) * 2);
+  --container-width: calc(var(--content-width) + var(--container-common-offset));
+
+  @media(max-width:768.98px) {
+    --container-offset: 15px;
+  }
+}
+
+[class*='_container'] {
+  margin: 0 auto;
+  max-width: var(--container-width);
+  padding: 0 var(--container-offset);
+}

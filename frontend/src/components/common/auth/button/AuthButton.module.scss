@@ -1,0 +1,25 @@
+.authButton {
+  font-family: vars.$primary-family;
+  font-weight: 700;
+  font-size: 36px;
+  text-align: center;
+  color: vars.$white;
+
+  border-radius: 20px;
+  min-width: 332px;
+  padding: 30px 20px;
+
+  background-color: vars.$cobalt-blue;
+
+  @media(max-width:768.98px) {
+    // width: 200px;
+    padding: 20px 10px;
+    // height: 60px;
+    font-size: 24px;
+    min-width: unset;
+  }
+
+  @media(max-width:425.98px) {
+    width: 100%;
+  }
+}
