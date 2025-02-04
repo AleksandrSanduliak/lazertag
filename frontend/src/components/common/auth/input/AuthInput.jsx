@@ -1,16 +1,18 @@
+import cn from 'classnames';
 import React from 'react';
 import cl from './AuthInput.module.scss';
 
-const AuthInput = ({ placeholder, type, name, isRequire, ...props }) => {
+const AuthInput = ({ placeholder, type, name, isRequire, error, ...props }) => {
   const [isLabelVisible, setIsLabelVisible] = React.useState(true);
-  const labelRef = React.useRef(null);
-
+  const inputRef = React.useRef(null);
+  // console.log('error', error);
   const handleLabelClick = () => {
     setIsLabelVisible(false);
   };
 
   const handleClickOutside = (event) => {
-    if (labelRef.current && !labelRef.current.contains(event.target)) {
+    if (inputRef.current.value) return;
+    if (inputRef.current && !inputRef.current.contains(event.target)) {
       setIsLabelVisible(true);
     }
   };
@@ -24,21 +26,30 @@ const AuthInput = ({ placeholder, type, name, isRequire, ...props }) => {
 
   return (
     <label htmlFor={name} className={cl.inputWrapper}>
+      {error && <span className={cn('errorStatus', cl.errorStatus)}>{error}</span>}
       <input
         name={name}
         type={type}
         className={cl.authInput}
         required
-        ref={labelRef}
+        ref={inputRef}
         onClick={handleLabelClick}
+        onFocus={() => setIsLabelVisible(false)}
+        onBlur={() => {
+          if (inputRef.current.value) return;
+          setIsLabelVisible(true);
+        }}
         {...props}
       />
-      {isLabelVisible && (
-        <span className={cl.placeholder}>
-          {placeholder}
-          {isRequire && <span className={cl.requiredStar}>*</span>}
-        </span>
-      )}
+
+      <span className={cl.placeholder}>
+        {isLabelVisible && (
+          <>
+            {placeholder}
+            {placeholder && isRequire && <span className={cl.requiredStar}>*</span>}
+          </>
+        )}
+      </span>
     </label>
   );
 };

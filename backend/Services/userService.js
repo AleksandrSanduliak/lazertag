@@ -3,15 +3,16 @@ const uuid = require('uuid');
 const UserDto = require("../dto/userDto");
 const UserInfoDto = require("../dto/userInfoDto");
 const pool = require("../DB/db");
-const CheckEmailRegistration = require("../helpers/CheckEmailRegistration");
 const TokenService = require("./tokenService");
 const MailService = require("./mailService");
 const ApiError = require("../exeptions/apiError");
 
 class UserService {
   async registration(data) {
-    CheckEmailRegistration(data.email);
-
+    const result = await pool.query('SELECT * FROM users WHERE email = \$1', [data.email]);
+    if (result.rows.length > 0) {
+      throw ApiError.BadRequest("Пользователь с таким email уже зарегистрирован");
+    }
     const hashPassword = await bcrypt.hash(data.password, 10);
     const generateActivationLink = uuid.v4();
     const userDto = new UserDto({ ...data, password: hashPassword, generateActivationLink })
@@ -24,19 +25,22 @@ class UserService {
 
     const saveToken = TokenService.saveToken(id, token.refreshToken);
     // MailService.sendMail(data.email, `${process.env.EMAIL_API}/api/auth/activate/` + generateActivationLink);
-    const userInfo = new UserInfoDto({ ...user.rows[0] })
+    const userInfo = new UserInfoDto({ ...insertUser.rows[0] })
     return { ...token, user: userInfo };
   }
 
   async login(userEmail, userPassword) {
     const user = await pool.query('SELECT * FROM users WHERE email = $1', [userEmail]);
-
+    console.log('userEmail', userEmail);
+    console.log('user', user);
+    console.log('!user.rows', !user.rows);
     if (!user.rows[0]) {
       throw ApiError.BadRequest('Пользователь с таким email не найден');
     }
 
     const { id, email, password } = user.rows[0]
     const isPasswordValid = await bcrypt.compare(userPassword, password);
+
     if (!isPasswordValid) {
       throw ApiError.BadRequest('Неверный пароль');
     }
@@ -72,10 +76,10 @@ class UserService {
       throw ApiError.UnauthorizedError();
     }
 
-    console.log('user', user)
+    // console.log('user', user)
     const userInfoDto = new UserInfoDto(user);
     const tokens = TokenService.generateTokens({ id: id, email: email });
-    console.log('tokens', tokens);
+    // console.log('tokens', tokens);
     await TokenService.saveToken(id, tokens.refreshToken);
 
     return { ...tokens, user: userInfoDto };

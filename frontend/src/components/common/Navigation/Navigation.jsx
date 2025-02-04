@@ -7,7 +7,11 @@ import cl from './Navigation.module.scss';
 const NavUserAccount = () => {
   return (
     <li key="account" className={cn('text', cl.headerLink)}>
-      <NavLink to="/login" className={cn('text', cl.headerLink)}>
+      <NavLink
+        to="/login"
+        className={({ isActive }) =>
+          `${isActive ? cl.isActiveHeaderLink : ''} 'text' ${cl.headerLink}`
+        }>
         <p>Личный кабинет</p>
       </NavLink>
     </li>

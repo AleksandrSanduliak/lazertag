@@ -2,14 +2,30 @@
   padding-top: 150px;
   padding-bottom: 235px;
 
+  background-image: url("../../../assets/registrationBcgLeft.png"), url("../../../assets/registrationBcgRight.png");
+  background-repeat: no-repeat;
+  background-position: left bottom, right top;
+
   @media(max-width:1200.98px) {
     padding-top: 50px;
     padding-bottom: 100px;
   }
 
+  @media(max-width:1024.98px) {
+    background-size: 300px;
+  }
+
   @media(max-width:768.98px) {
     padding-top: 20px;
     padding-bottom: 50px;
+  }
+
+  @media(max-width:500.98px) {
+    background-size: 150px;
+  }
+
+  @media(max-width:376.98px) {
+    background-size: 100px;
   }
 }
 

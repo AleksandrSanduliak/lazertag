@@ -1,23 +1,39 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit';
+import { eraseCookie, setCookie } from '../../utils/funcs/cookies';
 
-export const authSlice = createSlice({
-  name: 'authSlice',
+const authSlice = createSlice({
+  name: 'auth',
   initialState: {
-    value: 0
+    user: null,
+    accessToken: null,
+    isAuth: false,
   },
   reducers: {
-    increment: state => {
-      state.value += 1
-    },
-    decrement: state => {
-      state.value -= 1
-    },
-    incrementByAmount: (state, action) => {
-      state.value += action.payload
-    }
-  }
-})
+    logout: (state) => {
+      state.user = null;
+      state.isAuth = false;
+      state.accessToken = null;
 
-export const { increment, decrement, incrementByAmount } = authSlice.actions
+      eraseCookie('accessToken');
+    },
 
-export default authSlice.reducer
+    setUser: (state, action) => {
+      const { user, accessToken } = action.payload;
+      console.log('state', state);
+      console.log('action', action);
+      state.user = user;
+      state.accessToken = accessToken;
+
+      if (!accessToken) {
+        state.isAuth = false;
+      }
+      console.log('accessToken', accessToken);
+      setCookie('accessToken', accessToken, 15, 'minutes');
+      console.log('setCookie', setCookie('accessToken', accessToken, 15, 'minutes'));
+      state.isAuth = true;
+    },
+  },
+});
+
+export const { logout, setUser } = authSlice.actions;
+export default authSlice.reducer;
