@@ -1,0 +1,85 @@
+.userCabinerAside {
+  background-color: vars.$cobalt-blue;
+  width: 370px;
+  padding: 0 20px 70px 20px;
+
+  @media (max-width: 1440.98px) {
+    width: 300px;
+    padding: 0 10px 50px 10px;
+  }
+
+  @media (max-width: 768.98px) {
+    width: 200px;
+    padding: 0 10px 50px 10px;
+  }
+
+  @media (max-width: 550.98px) {
+    width: 150px;
+    padding: 0 10px 50px 10px;
+  }
+}
+
+.user {
+  background-color: vars.$cobalt-blue;
+  padding-top: 100px;
+  padding-bottom: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (max-width: 1440.98px) {
+    padding-top: 50px;
+    padding-bottom: 150px;
+  }
+
+  img {
+    border-radius: 50%;
+    width: 290px;
+    height: 290px;
+
+    @media (max-width: 1440.98px) {
+      width: 200px;
+      height: 200px;
+    }
+
+    @media (max-width: 768.98px) {
+      width: 100px;
+      height: 100px;
+    }
+  }
+}
+
+.userName {
+  font-family: vars.$primary-family;
+  font-weight: 700;
+  font-size: 36px;
+  letter-spacing: -0.04em;
+  text-align: center;
+  color: vars.$white;
+  margin-top: 20px;
+
+  @media(max-width:768.98px) {
+    font-size: 25px;
+  }
+}
+
+.userCabinetNavigation {
+  font-family: vars.$primary-family;
+  font-weight: 600;
+  font-size: 32px;
+  letter-spacing: -0.04em;
+  color: vars.$white;
+
+  @media(max-width:768.98px) {
+    font-size: 20px;
+  }
+
+  li {
+    padding: 17px 38px;
+    cursor: pointer;
+
+    @media(max-width:768.98px) {
+      padding: 10px 15px;
+    }
+  }
+}

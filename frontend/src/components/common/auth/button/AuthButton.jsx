@@ -1,9 +1,9 @@
 import React from 'react';
 import cl from './AuthButton.module.scss';
 
-const AuthButton = ({ children }) => {
+const AuthButton = ({ children, onClick }) => {
   return (
-    <button type="submit" className={cl.authButton}>
+    <button onClick={onClick} type="submit" className={cl.authButton}>
       {children}
     </button>
   );

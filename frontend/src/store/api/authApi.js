@@ -80,8 +80,29 @@ export const authApi = createApi({
         }
       },
     }),
+    logoutUser: builder.mutation({
+      query() {
+        return {
+          url: 'logout',
+          credentials: 'include',
+          method: 'POST',
+        };
+      },
+      async onQueryStarted(args, { dispatch, queryFulfilled }) {
+        try {
+          await queryFulfilled;
+          dispatch(logout());
+        } catch (e) {
+          console.log(e);
+        }
+      },
+    }),
   }),
 });
 
-export const { useAuthRegisterUserMutation, useAuthLoginUserMutation, useLazyRefreshTokenQuery } =
-  authApi;
+export const {
+  useAuthRegisterUserMutation,
+  useAuthLoginUserMutation,
+  useLazyRefreshTokenQuery,
+  useLogoutUserMutation,
+} = authApi;

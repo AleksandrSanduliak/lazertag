@@ -5,7 +5,7 @@ import cl from './AuthInput.module.scss';
 const AuthInput = ({ placeholder, type, name, isRequire, error, ...props }) => {
   const [isLabelVisible, setIsLabelVisible] = React.useState(true);
   const inputRef = React.useRef(null);
-  // console.log('error', error);
+
   const handleLabelClick = () => {
     setIsLabelVisible(false);
   };

@@ -66,7 +66,6 @@ const Login = () => {
     e.preventDefault();
 
     if (validateForm()) return;
-    console.log('123', formData);
     login(formData);
   };
 
@@ -125,7 +124,6 @@ const Login = () => {
                 Нет аккаунта?
               </NavLink>
             </div>
-
             <AuthButton>ВОЙТИ</AuthButton>
           </form>
         </div>
