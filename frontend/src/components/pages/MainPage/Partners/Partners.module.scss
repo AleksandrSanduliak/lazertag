@@ -1,0 +1,129 @@
+.partners {
+  padding-bottom: 60px;
+}
+
+.partnersTitle {
+  font-family: vars.$primary-family;
+  font-weight: 600;
+  font-size: 40px;
+  letter-spacing: -0.03em;
+  text-align: center;
+  color: vars.$red;
+  margin-bottom: 30px;
+}
+
+.partnersList {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+  row-gap: 40px;
+  column-gap: 20px;
+
+  @media(max-width:600.98px) {
+    row-gap: 20px;
+    column-gap: 0;
+  }
+}
+
+.partnersListItem {
+  flex: 1 1 32.3333333%;
+  background-repeat: no-repeat;
+  width: 400px;
+  background-size: 100% 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 15px;
+
+  @media(max-width:1440.98px) {
+    padding: 25px 15px;
+    flex: 1 1 25%;
+    height: auto;
+  }
+
+  @media(max-width:1280.98px) {
+    flex: 1 1 35%;
+  }
+
+  @media(max-width:991.98px) {
+    padding: 20px 20px;
+  }
+
+  @media(max-width:600.98px) {
+    flex: 1 1 100%;
+    width: 100%;
+    padding: 10px 10px;
+  }
+}
+
+.partnersItemTitle {
+  font-family: vars.$primary-family;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 94%;
+  color: vars.$white;
+  margin-bottom: 7px;
+
+  @media(max-width:991.98px) {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  @media(max-width:768.98px) {
+    font-size: 16px;
+    font-weight: 700;
+  }
+}
+
+.partnersItemSubtitle {
+  font-family: vars.$primary-family;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 125%;
+  letter-spacing: -0.03em;
+  color: vars.$white;
+
+  @media(max-width:991.98px) {
+    font-size: 14px;
+  }
+
+  @media(max-width:768.98px) {
+    font-size: 12px;
+    font-weight: 500;
+  }
+}
+
+.partnersItemImg {
+  width: 100px;
+  height: 100px;
+
+  @media(max-width:991.98px) {
+    width: 75px;
+    height: 75px;
+  }
+}
+
+.birdBcg {
+  background-image: url('../../../../assets/partners/bcg/birdBcg.png');
+}
+
+.shieldBcg {
+  background-image: url('../../../../assets/partners/bcg/shieldBcg.png');
+}
+
+.kalinindBcg {
+  background-image: url('../../../../assets/partners/bcg/kaliniBcg.png');
+}
+
+.helmetBcg {
+  background-image: url('../../../../assets/partners/bcg/helmetBcg.png');
+}
+
+.gutidBcg {
+  background-image: url('../../../../assets/partners/bcg/gutidBcg.png');
+}
+
+.spbBcg {
+  background-image: url('../../../../assets/partners/bcg/spbBcg.png');
+}

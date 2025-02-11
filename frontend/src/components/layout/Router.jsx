@@ -1,5 +1,5 @@
 import Login from 'components/pages/Login/Login';
-import MainPage from 'components/pages/MainPage';
+import MainPage from 'components/pages/MainPage/MainPage';
 import NotFound from 'components/pages/NotFound';
 import PasswordRecovery from 'components/pages/PasswordRecovery/PasswordRecovery';
 import Register from 'components/pages/Register/Register';

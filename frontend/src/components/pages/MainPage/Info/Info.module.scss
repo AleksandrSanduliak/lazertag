@@ -1,0 +1,161 @@
+.info {
+  padding: 80px 0;
+  margin-bottom: 70px;
+
+  @media(max-width:1024.98px) {
+    margin-bottom: 30px;
+    padding: 40px 0;
+  }
+}
+
+.infoTitle {
+  font-family: vars.$primary-family;
+  font-weight: 600;
+  font-size: 64px;
+  text-align: center;
+  color: vars.$royal-blue;
+  margin-bottom: 40px;
+
+  @media(max-width:1024.98px) {
+    font-size: 50px;
+  }
+
+  @media(max-width:768.98px) {
+    font-size: 35px;
+    margin-bottom: 20px;
+  }
+
+  @media(max-width:425.98px) {
+    font-size: 30px;
+  }
+}
+
+.infoSubtitle {
+  font-family: vars.$second-family;
+  font-weight: 400;
+  font-size: 24px;
+  text-align: center;
+  color: vars.$royal-blue;
+  margin: 0 auto;
+  max-width: 85%;
+
+  @media(max-width:1024.98px) {
+    font-size: 18px;
+  }
+
+  @media(max-width:768.98px) {
+    font-size: 14px;
+  }
+}
+
+.infoList {
+  margin-top: 80px;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: repeat(4, 291px);
+  justify-content: space-around;
+
+  @media(max-width:1370.98px) {
+    grid-template-columns: repeat(2, auto);
+    row-gap: 80px;
+    column-gap: 50px;
+    justify-content: center;
+  }
+
+  @media(max-width:1024.98px) {
+    margin-top: 40px;
+    row-gap: 40px;
+  }
+
+  @media(max-width:768.98px) {
+    padding: 0;
+    justify-content: center;
+  }
+
+  @media(max-width:425.98px) {
+    justify-content: space-around;
+    grid-template-columns: repeat(2, 100px);
+  }
+}
+
+.infoListItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  width: 212px;
+  height: 212px;
+  margin: 35px;
+  border-radius: 100%;
+  background-color: vars.$blue;
+  outline-offset: 20px;
+  outline: 22px solid vars.$rose-red;
+
+  @media(max-width:1370.98px) {
+    margin-right: 80px;
+  }
+
+  @media(max-width:1024.98px) {
+    width: 150px;
+    height: 150px;
+
+    outline-width: 10px;
+    outline-offset: 10px;
+    margin: 10px 50px 10px;
+  }
+
+  @media(max-width:768.98px) {
+    width: 100px;
+    height: 100px;
+
+    outline-width: 5px;
+    outline-offset: 5px;
+    margin: 10px 30px 10px;
+  }
+
+  @media(max-width:425.98px) {
+    margin: 5px 1px 5px;
+    outline-offset: 0;
+  }
+}
+
+.infoListItemTitle {
+  font-family: vars.$second-family;
+  font-weight: 500;
+  font-size: 48px;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: vars.$white;
+
+  @media(max-width:1024.98px) {
+    font-size: 25px;
+  }
+
+  @media(max-width:768.98px) {
+    font-size: 14px;
+  }
+}
+
+.infoListItemSubtitle {
+  font-family: vars.$primary-family;
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: -0.03em;
+  text-align: center;
+  color: vars.$white;
+
+  @media(max-width:1024.98px) {
+    font-size: 14px;
+  }
+}
+
+.infoImg {
+  width: 40px;
+  height: 40px;
+
+  @media(max-width:768.98px) {
+    width: 30px;
+    height: 30px;
+  }
+}
