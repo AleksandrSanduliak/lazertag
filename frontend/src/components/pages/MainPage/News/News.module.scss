@@ -1,0 +1,254 @@
+.news {
+  height: 950px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  @media(max-width:1440.98px) {
+    height: 750px;
+  }
+
+  @media(max-width:1280.98px) {
+    height: 550px;
+    padding-bottom: 70px;
+  }
+
+  @media(max-width:991.98px) {
+    height: auto;
+    padding-bottom: 70px;
+  }
+
+  @media(max-width:500.98px) {
+    height: auto;
+    padding-top: 20px;
+    padding-bottom: 40px;
+  }
+}
+
+.newsContainer {
+  height: 100%;
+  background-size: 100% 750px, 110% 170%;
+  background-position: 0px 40px, center right;
+  background-image: url('../../../../assets/newsBcg.png'), url('../../../../assets//newsBcg2.png');
+  background-repeat: no-repeat, no-repeat;
+
+  @media(max-width:1440.98px) {
+    background-size: 110% 700px, 100% 230%;
+    background-position: -20px 47px, center right;
+  }
+
+  @media(max-width:1280.98px) {
+    background-size: 110% 510px, 100% 200%;
+    background-position: -20px 15px, center right;
+  }
+
+  @media(max-width:991.98px) {
+    background-size: 110% 590px, 100% 230%;
+    background-position: -20px 15px, center right;
+  }
+
+  @media(max-width:768.98px) {
+    background-size: 170% 590px, 116% 190%;
+    background-position: -20px 15px, -56% -172px;
+  }
+
+  @media(max-width:500.98px) {
+    background-size: 0, 116% 190%;
+    background-position: -20px 15px, -56% -205px;
+
+  }
+}
+
+.newsTitle {
+  font-family: vars.$primary-family;
+  font-weight: 600;
+  font-size: 60px;
+  letter-spacing: -0.03em;
+  text-align: right;
+  margin-right: 17%;
+  color: vars.$red;
+
+  @media(max-width:1440.98px) {
+    margin-right: 10%;
+  }
+
+  @media(max-width:1280.98px) {
+    text-align: left;
+    margin-right: 0;
+    margin-left: 40px;
+    font-size: 40px;
+    margin-bottom: 20px;
+    padding-top: 20px;
+  }
+
+  @media(max-width:768.98px) {
+    font-size: 30px;
+    margin-top: 20px;
+  }
+
+  @media(max-width:500.98px) {
+    margin-left: 0;
+    margin-top: 0;
+    font-size: 30px;
+  }
+}
+
+.newsList {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-left: 100px;
+
+  @media(max-width:1440.98px) {
+    margin-left: 50px;
+  }
+
+  @media(max-width:1280.98px) {
+    gap: 20px;
+    margin-left: 40px;
+  }
+
+  @media(max-width:500.98px) {
+    margin-left: 0
+  }
+}
+
+.newsButton {
+  border-radius: 50px;
+  width: 300px;
+  height: 70px;
+  background-color: vars.$blue;
+  font-family: vars.$primary-family;
+  font-weight: 700;
+  font-size: 30px;
+  text-align: center;
+  color: #fff;
+  margin-left: 100px;
+  margin-top: 65px;
+
+  @media(max-width:1440.98px) {
+    margin-top: 40px;
+    margin-left: 50px;
+    height: 50px;
+    font-size: 24px;
+  }
+
+  @media(max-width:1280.98px) {
+    margin-left: 40px;
+  }
+
+  @media(max-width:991.98px) {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  @media(max-width:768.98px) {
+    font-size: 20px;
+    width: 200px;
+    height: 50px;
+  }
+
+  @media(max-width:500.98px) {
+    margin-left: 0px;
+    margin-top: 30px;
+  }
+
+  a {
+    color: #fff;
+  }
+}
+
+.newsListItem {
+  display: flex;
+  align-items: center;
+}
+
+.newsListItemImg {
+  width: 120px;
+  height: 120px;
+  margin-right: 15px;
+
+  @media(max-width:1280.98px) {
+    width: 70px;
+    height: 70px;
+    margin-right: 9px;
+  }
+
+  @media(max-width:500.98px) {
+    width: 0px;
+    height: 0px;
+    margin-right: 0px;
+  }
+}
+
+.newsListItemContent {
+  max-width: 600px;
+
+  @media(max-width:1440.98px) {
+    max-width: 470px;
+  }
+
+  @media(max-width:991.98px) {
+    max-width: 300px;
+  }
+
+  @media(max-width:768.98px) {
+    max-width: 80%
+  }
+
+  @media(max-width:500.98px) {
+    max-width: 100%
+  }
+}
+
+.newsListItemHeader {
+  font-family: vars.$primary-family;
+  font-weight: 600;
+  font-size: 24px;
+  color: vars.$red;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  h3 {
+    margin-right: 20px;
+  }
+
+  @media(max-width:1280.98px) {
+    font-size: 16px;
+  }
+
+  @media(max-width:1280.98px) {
+    font-size: 14px;
+  }
+}
+
+.newsListItemMain {
+  display: flex;
+  flex: 1;
+}
+
+.newsListItemLink {
+  width: 30px;
+  margin-top: auto;
+
+  @media(max-width:1440.98px) {
+    width: 40px;
+  }
+
+  @media(max-width:500.98px) {
+    width: 50px;
+  }
+
+}
+
+.newsListItemDesc {
+  font-family: vars.$second-family;
+  font-weight: 400;
+  font-size: 17px;
+  color: vars.$royal-blue;
+
+  @media(max-width:1280.98px) {
+    font-size: 14px;
+  }
+}
