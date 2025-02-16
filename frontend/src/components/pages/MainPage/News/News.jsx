@@ -2,7 +2,9 @@ import arrowInCircle from 'assets/arrow.svg';
 import newsImg from 'assets/newsImg.png';
 import cn from 'classnames';
 import React from 'react';
+import { NavLink } from 'react-router';
 import cl from './News.module.scss';
+
 const newsList = [
   {
     id: 0,
@@ -41,9 +43,9 @@ const NewsListItem = ({ item }) => {
         </div>
         <div className={cl.newsListItemMain}>
           <p className={cl.newsListItemDesc}>{item.description}</p>
-          <a className={cl.newsListItemLink} href={item.link} target="_blank">
+          <NavLink to="/news" className={cl.newsListItemLink} href={item.link} target="_blank">
             <img src={arrowInCircle} alt="Переход на страницу новости" />
-          </a>
+          </NavLink>
         </div>
       </div>
     </li>
@@ -62,9 +64,9 @@ const News = () => {
             })}
           </ul>
           <button className={cl.newsButton}>
-            <a href="./" target="_blank">
+            <NavLink to="/news" target="_blank">
               ВСЕ НОВОСТИ
-            </a>
+            </NavLink>
           </button>
         </div>
       </div>

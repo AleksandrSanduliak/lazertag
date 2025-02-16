@@ -94,3 +94,8 @@ input {
   position: relative;
   z-index: 99999;
 }
+
+body .slick-prev::before,
+body .slick-next::before {
+  display: none;
+}

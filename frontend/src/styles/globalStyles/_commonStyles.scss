@@ -1,4 +1,9 @@
 @use './vars' as vars;
+@import '../../../node_modules/swiper/swiper.scss';
+@import '../../../node_modules/swiper/modules/navigation.scss';
+@import '../../../node_modules/swiper/modules/effect-cards.scss';
+// @import '../../../node_modules/swiper/modules/effect-coverflow.scss';
+
 
 .text {
   font-family: vars.$second-family;

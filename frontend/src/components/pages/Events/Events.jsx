@@ -1,5 +1,5 @@
 import React from 'react';
-
+import cl from './Events.module.scss';
 const Events = () => {
   return (
     <div>
