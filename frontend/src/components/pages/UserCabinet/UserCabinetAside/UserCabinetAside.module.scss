@@ -1,21 +1,47 @@
 .userCabinerAside {
-  background-color: vars.$cobalt-blue;
   width: 370px;
   padding: 0 20px 70px 20px;
+  background-color: #0095FF;
 
-  @media (max-width: 1440.98px) {
-    width: 300px;
-    padding: 0 10px 50px 10px;
-  }
-
-  @media (max-width: 768.98px) {
+  @media (max-width: 1920.98px) {
     width: 200px;
     padding: 0 10px 50px 10px;
   }
 
+  @media (max-width: 768.98px) {
+    transition: 0.3s width ease;
+    z-index: 9999;
+    position: relative;
+    transition: 0.3s width ease;
+    min-height: 420px;
+    width: 50px;
+  }
+
   @media (max-width: 550.98px) {
-    width: 150px;
     padding: 0 10px 50px 10px;
+  }
+}
+
+.asideWrapper {
+  height: 100%;
+  flex: 1;
+  background-color: #0095FF;
+
+  @media (max-width: 768.98px) {
+    transition: 0.3s width ease;
+    position: absolute;
+    left: 0;
+    background-color: vars.$cobalt-blue;
+    height: 461px;
+    width: 50px;
+  }
+}
+
+.isOpenAside {
+  transition: 0.3s width ease;
+
+  @media (max-width: 768.98px) {
+    width: 60vw;
   }
 }
 
@@ -27,9 +53,9 @@
   flex-direction: column;
   align-items: center;
 
-  @media (max-width: 1440.98px) {
-    padding-top: 50px;
-    padding-bottom: 150px;
+  @media (max-width: 1920.98px) {
+    padding-top: 20px;
+    padding-bottom: 50px;
   }
 
   img {
@@ -37,9 +63,9 @@
     width: 290px;
     height: 290px;
 
-    @media (max-width: 1440.98px) {
-      width: 200px;
-      height: 200px;
+    @media (max-width: 1920.98px) {
+      width: 100px;
+      height: 100px;
     }
 
     @media (max-width: 768.98px) {
@@ -58,7 +84,7 @@
   color: vars.$white;
   margin-top: 20px;
 
-  @media(max-width:768.98px) {
+  @media(max-width:1920.98px) {
     font-size: 25px;
   }
 }
@@ -69,17 +95,71 @@
   font-size: 32px;
   letter-spacing: -0.04em;
   color: vars.$white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
 
-  @media(max-width:768.98px) {
+  @media(max-width:1920.98px) {
     font-size: 20px;
   }
 
   li {
     padding: 17px 38px;
     cursor: pointer;
+    opacity: 1;
+    visibility: visible;
+    display: flex;
 
-    @media(max-width:768.98px) {
+    align-items: flex-start;
+
+    @media(max-width:1920.98px) {
       padding: 10px 15px;
     }
+  }
+}
+
+.isOpenHideUser {
+  @media(max-width:768.98px) {
+    transition: 0.5s all ease;
+    opacity: 0;
+    visibility: hidden;
+    height: 200px;
+  }
+}
+
+.toggleButton {
+  display: none;
+
+  @media(max-width:768.98px) {
+    display: block;
+    background-color: vars.$white;
+    border-radius: 10px;
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    right: -10px;
+    top: 80px;
+    border: 1px solid vars.$black;
+  }
+}
+
+.userCabinetSvg {
+  display: none;
+
+  @media(max-width:768.98px) {
+    display: block;
+    margin-left: 5px;
+  }
+}
+
+.hideText {
+  @media(max-width:768.98px) {
+    transition: 0.5s all ease;
+    opacity: 0;
+    visibility: hidden;
+    width: 0;
+    height: 0;
   }
 }

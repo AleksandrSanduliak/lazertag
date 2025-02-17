@@ -1,7 +1,7 @@
 import cn from 'classnames';
 import React from 'react';
 import { NavLink } from 'react-router';
-import { Autoplay, EffectCards } from 'swiper/modules';
+import { Autoplay, EffectCards, EffectFade, Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import imageSlide from '../../../../assets/mediaImgSlides/imageSlide.png';
 import imageSlide1 from '../../../../assets/mediaImgSlides/imageSlide1.png';
@@ -69,6 +69,7 @@ const Media = () => {
       }
     };
   }, [updateIndex]);
+
   return (
     <section className={cl.media}>
       <div className="media__container">
@@ -101,32 +102,40 @@ const Media = () => {
           <div className={cl.swiperContainer}>
             <Swiper
               ref={swiperRef}
-              effect={'cards'}
               modules={[Autoplay, EffectCards]}
               initialSlide={activeIndex}
-              slidesPerView={'2'}
-              grabCursor={false}
-              init={false}
+              slidesPerView={1}
+              grabCursor={true}
               centeredSlides={true}
               loop={true}
-              watchOverflow={true}
+              effect="cards"
               autoplay={{
                 delay: 3500,
                 disableOnInteraction: true,
                 pauseOnMouseEnter: true,
                 waitForTransition: true,
               }}
-              cardsEffect={{
-                perSlideOffset: 30,
-                perSlideRotate: 1,
-                slideShadows: false,
+              breakpoints={{
+                320: {
+                  slidesPerView: 1,
+                  spaceBetween: '20px',
+                  cardsEffect: {
+                    perSlideOffset: 5,
+                    perSlideRotate: 1,
+                    slideShadows: false,
+                  },
+                },
+                768: {
+                  slidesPerView: 2,
+                  effect: 'cards',
+                  cardsEffect: {
+                    perSlideOffset: 30,
+                    perSlideRotate: 1,
+                    slideShadows: false,
+                  },
+                },
               }}>
               {imagesList.map((item) => {
-                if (activeIndex === item.id) {
-                  console.log('activeIndex === item', activeIndex === item.id);
-                  console.log(' item', item);
-                  console.log('activeIndex', activeIndex);
-                }
                 return (
                   <SwiperSlide
                     className={cn(cl.mediaSlide, { [cl.activeSlide]: activeIndex === item.id })}

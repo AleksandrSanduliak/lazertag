@@ -51,8 +51,11 @@
   flex-direction: column;
   gap: 20px;
 
-  li {
+  @media(max-width:1920.98px) {
+    gap: 5px;
+  }
 
+  li {
     text-align: left;
 
     :hover {
